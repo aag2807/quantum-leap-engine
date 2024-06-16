@@ -14,11 +14,127 @@
 # EXTERNAL cache entries
 ########################
 
+//Set when you want to build the Bullet 2 demos
+BUILD_BULLET2_DEMOS:BOOL=ON
+
+//Set when you want to build Bullet 3
+BUILD_BULLET3:BOOL=ON
+
+//Build BulletRobotics extra module, only applied when BUILD_EXTRAS
+// is ON
+BUILD_BULLET_ROBOTICS_EXTRA:BOOL=ON
+
+//Build BulletRoboticsGUI extra module, only applied when BUILD_EXTRAS
+// is ON
+BUILD_BULLET_ROBOTICS_GUI_EXTRA:BOOL=ON
+
+//Set when you want to build apps with enet TCP networking support
+BUILD_CLSOCKET:BOOL=ON
+
+//Build ConvexDecomposition extra module, only applied when BUILD_EXTRAS
+// is ON
+BUILD_CONVEX_DECOMPOSITION_EXTRA:BOOL=ON
+
+//Build original Bullet CPU examples
+BUILD_CPU_DEMOS:BOOL=ON
+
+//Set when you want to build apps with enet UDP networking support
+BUILD_ENET:BOOL=ON
+
+//Set when you want to build the extras
+BUILD_EXTRAS:BOOL=ON
+
+//Build GIMPACTUtils extra module, only applied when BUILD_EXTRAS
+// is ON
+BUILD_GIMPACTUTILS_EXTRA:BOOL=ON
+
+//Build HACD extra module, only applied when BUILD_EXTRAS is ON
+BUILD_HACD_EXTRA:BOOL=ON
+
+//Build InverseDynamic extra module, only applied when BUILD_EXTRAS
+// is ON
+BUILD_INVERSE_DYNAMIC_EXTRA:BOOL=ON
+
+//Build obj2sdf extra module, only applied when BUILD_EXTRAS is
+// ON
+BUILD_OBJ2SDF_EXTRA:BOOL=ON
+
+//Set when you want to build the OpenGL3+ demos
+BUILD_OPENGL3_DEMOS:BOOL=ON
+
+//Set when you want to build pybullet (Python bindings for Bullet)
+BUILD_PYBULLET:BOOL=OFF
+
+//Build Serialize extra module, only applied when BUILD_EXTRAS
+// is ON
+BUILD_SERIALIZE_EXTRA:BOOL=ON
+
+//Build shared libraries
+BUILD_SHARED_LIBS:BOOL=OFF
+
+//Build Unit Tests
+BUILD_UNIT_TESTS:BOOL=ON
+
+//Build Bullet 2 libraries with mutex locking around certain operations
+// (required for multi-threading)
+BULLET2_MULTITHREADING:BOOL=OFF
+
+//Path to a library.
+BULLET_COLLISION_LIBRARY:FILEPATH=/opt/homebrew/lib/libBulletCollision.dylib
+
+//Path to a library.
+BULLET_COLLISION_LIBRARY_DEBUG:FILEPATH=BULLET_COLLISION_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+BULLET_DYNAMICS_LIBRARY:FILEPATH=/opt/homebrew/lib/libBulletDynamics.dylib
+
+//Path to a library.
+BULLET_DYNAMICS_LIBRARY_DEBUG:FILEPATH=BULLET_DYNAMICS_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a file.
+BULLET_INCLUDE_DIR:PATH=/opt/homebrew/include/bullet
+
+//Path to a library.
+BULLET_MATH_LIBRARY:FILEPATH=/opt/homebrew/lib/libLinearMath.dylib
+
+//Path to a library.
+BULLET_MATH_LIBRARY_DEBUG:FILEPATH=BULLET_MATH_LIBRARY_DEBUG-NOTFOUND
+
+//Value Computed by CMake
+BULLET_PHYSICS_BINARY_DIR:STATIC=/Users/reinaldo/CLionProjects/QuantumLeapEngine/cmake-build-debug/lib/bullet3
+
+//Value Computed by CMake
+BULLET_PHYSICS_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+BULLET_PHYSICS_SOURCE_DIR:STATIC=/Users/reinaldo/CLionProjects/QuantumLeapEngine/lib/bullet3
+
+//Path to a library.
+BULLET_SOFTBODY_LIBRARY:FILEPATH=/opt/homebrew/lib/libBulletSoftBody.dylib
+
+//Path to a library.
+BULLET_SOFTBODY_LIBRARY_DEBUG:FILEPATH=BULLET_SOFTBODY_LIBRARY_DEBUG-NOTFOUND
+
+//Clamp rigid bodies' velocity to this value, if larger than zero.
+// Useful to prevent floating point errors or in general runaway
+// velocities in complex scenarios
+CLAMP_VELOCITIES:STRING=0
+
+//Build for use inside other CMake projects as dependency.
+CLSOCKET_DEP_ONLY:BOOL=OFF
+
+//Build clsocket lib as shared.
+CLSOCKET_SHARED:BOOL=OFF
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar
+
+//For backwards compatibility, what version of CMake commands and
+// syntax should this version of CMake try to support.
+CMAKE_BACKWARDS_COMPATIBILITY:STRING=2.4
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
@@ -87,11 +203,59 @@ CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/Users/reinaldo/CLionProjects/QuantumLeapEngine/cmake-build-debug/CMakeFiles/pkgRedirects
 
+//User executables (bin)
+CMAKE_INSTALL_BINDIR:PATH=bin
+
+//Read-only architecture-independent data (DATAROOTDIR)
+CMAKE_INSTALL_DATADIR:PATH=
+
+//Read-only architecture-independent data root (share)
+CMAKE_INSTALL_DATAROOTDIR:PATH=share
+
+//Documentation root (DATAROOTDIR/doc/PROJECT_NAME)
+CMAKE_INSTALL_DOCDIR:PATH=
+
+//C header files (include)
+CMAKE_INSTALL_INCLUDEDIR:PATH=include
+
+//Info documentation (DATAROOTDIR/info)
+CMAKE_INSTALL_INFODIR:PATH=
+
+//Object code libraries (lib)
+CMAKE_INSTALL_LIBDIR:PATH=lib
+
+//Program executables (libexec)
+CMAKE_INSTALL_LIBEXECDIR:PATH=libexec
+
+//Locale-dependent data (DATAROOTDIR/locale)
+CMAKE_INSTALL_LOCALEDIR:PATH=
+
+//Modifiable single-machine data (var)
+CMAKE_INSTALL_LOCALSTATEDIR:PATH=var
+
+//Man documentation (DATAROOTDIR/man)
+CMAKE_INSTALL_MANDIR:PATH=
+
 //Path to a program.
 CMAKE_INSTALL_NAME_TOOL:FILEPATH=/usr/bin/install_name_tool
 
+//C header files for non-gcc (/usr/include)
+CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
+
 //Install path prefix, prepended onto install directories.
 CMAKE_INSTALL_PREFIX:PATH=/usr/local
+
+//Run-time variable data (LOCALSTATEDIR/run)
+CMAKE_INSTALL_RUNSTATEDIR:PATH=
+
+//System admin executables (sbin)
+CMAKE_INSTALL_SBINDIR:PATH=sbin
+
+//Modifiable architecture-independent data (com)
+CMAKE_INSTALL_SHAREDSTATEDIR:PATH=com
+
+//Read-only single-machine data (etc)
+CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
@@ -147,6 +311,21 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=QuantumLeapEngine
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION:STATIC=3.5.0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=3
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MINOR:STATIC=5
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_PATCH:STATIC=0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_TWEAK:STATIC=
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
@@ -213,6 +392,130 @@ CMAKE_TAPI:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeD
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Path to a library.
+COCOA:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/Cocoa.framework
+
+//Path to a library.
+COCOA_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/Cocoa.framework
+
+//Use VHACD in BulletRobotics and pybullet
+ENABLE_VHACD:BOOL=ON
+
+//Single output directory for building all executables.
+EXECUTABLE_OUTPUT_PATH:PATH=
+
+//Value Computed by CMake
+GLEW_BINARY_DIR:STATIC=/Users/reinaldo/CLionProjects/QuantumLeapEngine/cmake-build-debug/lib/glew
+
+//The directory containing a CMake configuration file for GLEW.
+GLEW_DIR:PATH=/opt/homebrew/lib/cmake/glew
+
+//Path to a file.
+GLEW_INCLUDE_DIR:PATH=/opt/homebrew/include
+
+//Value Computed by CMake
+GLEW_IS_TOP_LEVEL:STATIC=OFF
+
+//Path to a library.
+GLEW_LIBRARY:FILEPATH=/opt/homebrew/lib/libGLEW.dylib
+
+//Path to a library.
+GLEW_LIBRARY_DEBUG:FILEPATH=GLEW_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+GLEW_LIBRARY_RELEASE:FILEPATH=GLEW_LIBRARY_RELEASE-NOTFOUND
+
+//Value Computed by CMake
+GLEW_SOURCE_DIR:STATIC=/Users/reinaldo/CLionProjects/QuantumLeapEngine/lib/glew
+
+//Value Computed by CMake
+GLFW_BINARY_DIR:STATIC=/Users/reinaldo/CLionProjects/QuantumLeapEngine/cmake-build-debug/lib/glfw
+
+//Build support for Cocoa
+GLFW_BUILD_COCOA:BOOL=ON
+
+//Build the GLFW documentation
+GLFW_BUILD_DOCS:BOOL=OFF
+
+//Build the GLFW example programs
+GLFW_BUILD_EXAMPLES:BOOL=OFF
+
+//Build the GLFW test programs
+GLFW_BUILD_TESTS:BOOL=OFF
+
+//Generate installation target
+GLFW_INSTALL:BOOL=ON
+
+//Value Computed by CMake
+GLFW_IS_TOP_LEVEL:STATIC=OFF
+
+//Library type override for GLFW (SHARED, STATIC, OBJECT, or empty
+// to follow BUILD_SHARED_LIBS)
+GLFW_LIBRARY_TYPE:STRING=
+
+//Value Computed by CMake
+GLFW_SOURCE_DIR:STATIC=/Users/reinaldo/CLionProjects/QuantumLeapEngine/lib/glfw
+
+//The directory containing a CMake configuration file for GLM.
+GLM_DIR:PATH=/opt/homebrew/share/glm
+
+//Install generated CMake files
+INSTALL_CMAKE_FILES:BOOL=ON
+
+//Set when you want to install libraries
+INSTALL_LIBS:BOOL=OFF
+
+//Internal update serialization structures
+INTERNAL_UPDATE_SERIALIZATION_STRUCTURES:BOOL=OFF
+
+//Value Computed by CMake
+ImGui_BINARY_DIR:STATIC=/Users/reinaldo/CLionProjects/QuantumLeapEngine/cmake-build-debug/lib/imgui
+
+//Value Computed by CMake
+ImGui_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+ImGui_SOURCE_DIR:STATIC=/Users/reinaldo/CLionProjects/QuantumLeapEngine/lib/imgui
+
+//Single output directory for building all libraries.
+LIBRARY_OUTPUT_PATH:PATH=
+
+//Path to a file.
+OPENAL_INCLUDE_DIR:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenAL.framework/Headers
+
+//Path to a library.
+OPENAL_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenAL.framework
+
+//Include for OpenGL on OS X
+OPENGL_INCLUDE_DIR:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework
+
+//OpenGL library for OS X
+OPENGL_gl_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework
+
+//GLU library for OS X (usually same as OpenGL library)
+OPENGL_glu_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework
+
+//Dependencies for the target
+OpenGLWindow_LIB_DEPENDS:STATIC=general;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/Cocoa.framework;
+
+//Base directory for pkgconfig files
+PKGCONFIG_INSTALL_PREFIX:STRING=lib/pkgconfig/
+
+//Arguments to supply to pkg-config
+PKG_CONFIG_ARGN:STRING=
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=/opt/homebrew/bin/pkg-config
+
+//Value Computed by CMake
+QuantumLeap3D_BINARY_DIR:STATIC=/Users/reinaldo/CLionProjects/QuantumLeapEngine/cmake-build-debug
+
+//Value Computed by CMake
+QuantumLeap3D_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+QuantumLeap3D_SOURCE_DIR:STATIC=/Users/reinaldo/CLionProjects/QuantumLeapEngine
+
 //Value Computed by CMake
 QuantumLeapEngine_BINARY_DIR:STATIC=/Users/reinaldo/CLionProjects/QuantumLeapEngine/cmake-build-debug
 
@@ -222,11 +525,57 @@ QuantumLeapEngine_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 QuantumLeapEngine_SOURCE_DIR:STATIC=/Users/reinaldo/CLionProjects/QuantumLeapEngine
 
+//Use double precision
+USE_DOUBLE_PRECISION:BOOL=OFF
+
+//Use Glut
+USE_GLUT:BOOL=ON
+
+//Use Graphical Benchmark
+USE_GRAPHICAL_BENCHMARK:BOOL=ON
+
+//Use MSVC Incremental Linking
+USE_MSVC_INCREMENTAL_LINKING:BOOL=OFF
+
+//Use MSVC Release Runtime Library even in Debug
+USE_MSVC_RELEASE_RUNTIME_ALWAYS:BOOL=OFF
+
+//Use OpenVR for virtual reality
+USE_OPENVR:BOOL=OFF
+
+//Use btSoftMultiBodyDynamicsWorld
+USE_SOFT_BODY_MULTI_BODY_DYNAMICS_WORLD:BOOL=ON
+
+//The directory containing a CMake configuration file for glfw3.
+glfw3_DIR:PATH=/opt/homebrew/lib/cmake/glfw3
+
+//The directory containing a CMake configuration file for glm.
+glm_DIR:PATH=/opt/homebrew/share/glm
+
+//Path to a library.
+pkgcfg_lib_GLFW3_glfw:FILEPATH=/opt/homebrew/Cellar/glfw/3.4/lib/libglfw.dylib
+
 
 ########################
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: BULLET_COLLISION_LIBRARY
+BULLET_COLLISION_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BULLET_COLLISION_LIBRARY_DEBUG
+BULLET_COLLISION_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BULLET_DYNAMICS_LIBRARY
+BULLET_DYNAMICS_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BULLET_DYNAMICS_LIBRARY_DEBUG
+BULLET_DYNAMICS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BULLET_MATH_LIBRARY
+BULLET_MATH_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BULLET_MATH_LIBRARY_DEBUG
+BULLET_MATH_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BULLET_SOFTBODY_LIBRARY
+BULLET_SOFTBODY_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BULLET_SOFTBODY_LIBRARY_DEBUG
+BULLET_SOFTBODY_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -295,11 +644,45 @@ CMAKE_GENERATOR_INSTANCE:INTERNAL=
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
+//Test CMAKE_HAVE_LIBC_PTHREAD
+CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/Users/reinaldo/CLionProjects/QuantumLeapEngine
+//ADVANCED property for variable: CMAKE_INSTALL_BINDIR
+CMAKE_INSTALL_BINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DATADIR
+CMAKE_INSTALL_DATADIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DATAROOTDIR
+CMAKE_INSTALL_DATAROOTDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DOCDIR
+CMAKE_INSTALL_DOCDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_INCLUDEDIR
+CMAKE_INSTALL_INCLUDEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_INFODIR
+CMAKE_INSTALL_INFODIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LIBDIR
+CMAKE_INSTALL_LIBDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LIBEXECDIR
+CMAKE_INSTALL_LIBEXECDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LOCALEDIR
+CMAKE_INSTALL_LOCALEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LOCALSTATEDIR
+CMAKE_INSTALL_LOCALSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_MANDIR
+CMAKE_INSTALL_MANDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_INSTALL_NAME_TOOL
 CMAKE_INSTALL_NAME_TOOL-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_OLDINCLUDEDIR
+CMAKE_INSTALL_OLDINCLUDEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_RUNSTATEDIR
+CMAKE_INSTALL_RUNSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SBINDIR
+CMAKE_INSTALL_SBINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SHAREDSTATEDIR
+CMAKE_INSTALL_SHAREDSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SYSCONFDIR
+CMAKE_INSTALL_SYSCONFDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
 CMAKE_LINKER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS
@@ -360,4 +743,82 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding Bullet
+FIND_PACKAGE_MESSAGE_DETAILS_Bullet:INTERNAL=[/opt/homebrew/lib/libBulletDynamics.dylib][/opt/homebrew/lib/libBulletCollision.dylib][/opt/homebrew/lib/libLinearMath.dylib][/opt/homebrew/lib/libBulletSoftBody.dylib][/opt/homebrew/include/bullet][v()]
+//Details about finding GLEW
+FIND_PACKAGE_MESSAGE_DETAILS_GLEW:INTERNAL=[/opt/homebrew/lib/cmake/glew/glew-config.cmake][v()]
+//Details about finding OpenAL
+FIND_PACKAGE_MESSAGE_DETAILS_OpenAL:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenAL.framework][/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenAL.framework/Headers][v()]
+//Details about finding OpenGL
+FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework][/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework][c ][v()]
+//Details about finding PkgConfig
+FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/opt/homebrew/bin/pkg-config][v0.29.2()]
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//ADVANCED property for variable: GLEW_LIBRARY_DEBUG
+GLEW_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GLEW_LIBRARY_RELEASE
+GLEW_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+GLFW3_CFLAGS:INTERNAL=-I/opt/homebrew/Cellar/glfw/3.4/include
+GLFW3_CFLAGS_I:INTERNAL=
+GLFW3_CFLAGS_OTHER:INTERNAL=
+GLFW3_FOUND:INTERNAL=1
+GLFW3_INCLUDEDIR:INTERNAL=/opt/homebrew/Cellar/glfw/3.4/include
+GLFW3_INCLUDE_DIRS:INTERNAL=/opt/homebrew/Cellar/glfw/3.4/include
+GLFW3_LDFLAGS:INTERNAL=-L/opt/homebrew/Cellar/glfw/3.4/lib;-lglfw
+GLFW3_LDFLAGS_OTHER:INTERNAL=
+GLFW3_LIBDIR:INTERNAL=/opt/homebrew/Cellar/glfw/3.4/lib
+GLFW3_LIBRARIES:INTERNAL=glfw
+GLFW3_LIBRARY_DIRS:INTERNAL=/opt/homebrew/Cellar/glfw/3.4/lib
+GLFW3_LIBS:INTERNAL=
+GLFW3_LIBS_L:INTERNAL=
+GLFW3_LIBS_OTHER:INTERNAL=
+GLFW3_LIBS_PATHS:INTERNAL=
+GLFW3_MODULE_NAME:INTERNAL=glfw3
+GLFW3_PREFIX:INTERNAL=/opt/homebrew/Cellar/glfw/3.4
+GLFW3_STATIC_CFLAGS:INTERNAL=-I/opt/homebrew/Cellar/glfw/3.4/include
+GLFW3_STATIC_CFLAGS_I:INTERNAL=
+GLFW3_STATIC_CFLAGS_OTHER:INTERNAL=
+GLFW3_STATIC_INCLUDE_DIRS:INTERNAL=/opt/homebrew/Cellar/glfw/3.4/include
+GLFW3_STATIC_LDFLAGS:INTERNAL=-L/opt/homebrew/Cellar/glfw/3.4/lib;-lglfw;-framework;Cocoa;-framework;IOKit;-framework;CoreFoundation
+GLFW3_STATIC_LDFLAGS_OTHER:INTERNAL=-framework;Cocoa;-framework;IOKit;-framework;CoreFoundation
+GLFW3_STATIC_LIBDIR:INTERNAL=
+GLFW3_STATIC_LIBRARIES:INTERNAL=glfw
+GLFW3_STATIC_LIBRARY_DIRS:INTERNAL=/opt/homebrew/Cellar/glfw/3.4/lib
+GLFW3_STATIC_LIBS:INTERNAL=
+GLFW3_STATIC_LIBS_L:INTERNAL=
+GLFW3_STATIC_LIBS_OTHER:INTERNAL=
+GLFW3_STATIC_LIBS_PATHS:INTERNAL=
+GLFW3_VERSION:INTERNAL=3.4.0
+GLFW3_glfw3_INCLUDEDIR:INTERNAL=
+GLFW3_glfw3_LIBDIR:INTERNAL=
+GLFW3_glfw3_PREFIX:INTERNAL=
+GLFW3_glfw3_VERSION:INTERNAL=
+//GLFW pkg-config Libs.private
+GLFW_PKG_CONFIG_LIBS_PRIVATE:INTERNAL= -framework Cocoa -framework IOKit -framework CoreFoundation -framework QuartzCore
+//GLFW pkg-config Requires.private
+GLFW_PKG_CONFIG_REQUIRES_PRIVATE:INTERNAL=
+//ADVANCED property for variable: OPENAL_INCLUDE_DIR
+OPENAL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENAL_LIBRARY
+OPENAL_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_INCLUDE_DIR
+OPENGL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_gl_LIBRARY
+OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_glu_LIBRARY
+OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_ARGN
+PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+//Use MSVC runtime library DLL
+USE_MSVC_RUNTIME_LIBRARY_DLL:INTERNAL=OFF
+//CMAKE_INSTALL_PREFIX during last run
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
+__pkg_config_arguments_GLFW3:INTERNAL=REQUIRED;glfw3
+__pkg_config_checked_GLFW3:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_GLFW3_glfw
+pkgcfg_lib_GLFW3_glfw-ADVANCED:INTERNAL=1
+prefix_result:INTERNAL=/opt/homebrew/Cellar/glfw/3.4/lib
 
